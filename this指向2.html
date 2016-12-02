@@ -1,0 +1,31 @@
+thisthis<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>这里的this指向了window</h1>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //使用 strict模式会报错
+        // ‘use strict’;
+        function getAge(){
+            var y = new Date().getFullYear();
+            return y-this.birth;
+        }
+        var xiaoming ={
+            name:'xiaoming',
+            birth:1993,
+            age:getAge
+        }
+        console.log(xiaoming.age);
+        console.log(xiaoming.age());
+        console.log('----------------------------');
+        console.log(getAge());
+
+    </script>
+</html>

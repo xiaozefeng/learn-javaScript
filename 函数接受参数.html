@@ -1,0 +1,29 @@
+java<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>javascript函数</h1>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function abx (a,b,...rest) {
+            console.log(a);
+            console.log(b);
+            console.log(rest);
+        }
+        abx(1,2,3,4,5,5);
+        console.log('-----------------------');
+        //获取实际参数
+        function abx1 (a) {
+            for(var x of arguments){
+                console.log('实际传入的参数'+x);
+            }
+        }
+        abx1(1,2,3,4,5,6,6);
+    </script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>将名字首字母大写，其他小写</h1>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        'use strict';
+        var arr = ['jack','rOse','LCUY'];
+        arr.map(function (x) {
+            return x[0].toUpperCase()+x.substring(1).toLowerCase();
+        }).forEach(function (element) {
+            console.log(element);
+        })
+    </script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>利用map 和reduce 将一个字符串转换成一个整数</h1>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        'use strict';
+        //
+        var str = '12345';
+        var arr = str.split('');
+        console.log(arr);
+        var num = arr.map(function (x) {
+            return x*1;
+        }).reduce(function (x,y) {
+            return x*10+y;
+        });
+        console.log(num);
+    </script>
+</html>

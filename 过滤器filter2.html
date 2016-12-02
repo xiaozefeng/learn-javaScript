@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>巧妙去除数组中重复元素</h1>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        'use strict';
+        //巧妙去除数组中重复元素
+        var arr = ['apple', 'strawberry', 'banana', 'pear', 'apple', 'orange', 'orange', 'strawberry'];
+        console.log('去重之前');
+        console.log(arr);
+        var r = arr.filter((element,index,self) => self.indexOf(element) === index );
+        console.log('去重之后');
+        console.log(r);
+    </script>
+</html>

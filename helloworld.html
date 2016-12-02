@@ -6,16 +6,31 @@
     </head>
     <body>
         <div id="box">
-
+            <input type="text" v-model="msg" name="name" value="">
+            <p>
+                {{msg}}
+            </p>
+            <p>
+                <input id="btn" type="button" name="name" value="change" @click="change($event)">
+            </p>
         </div>
     </body>
     <script src="vue.js" charset="utf-8"></script>
     <script type="text/javascript">
-        new Vue({
-            el:'#box',
-            data:{
-                msg:'hello javascript'
-            }
-        })
+        window.onload=function  (arguments) {
+            new Vue({
+                el:'#box',
+                data:{
+                    msg:'hello vue'
+                },
+                methods:{
+                    change(event) {
+                        var btn  = document.getElementById('btn');
+                        btn.value = 'changed';
+                        alert(document.getElementById('btn').value);
+                    }
+                }
+            })
+        }
     </script>
 </html>

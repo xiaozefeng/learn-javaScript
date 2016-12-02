@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>map指的是对集合的每一个元素做相同的操作</h1>
+            <h1>
+                reduce 指的是对集合的元素做
+                拿第一个元素与第二个元素做运算，再讲结果与第三个元素做运算
+            </h1>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        console.log('-------map--------');
+        function pow(x) {
+            return x*x;
+        }
+        var arr=[1,2,3,4,5,6];
+        console.log(arr.map(pow));
+
+        //将数组的每一个元素转换成数组
+        console.log(arr.map(String));
+
+        console.log('------reduce-------');
+        console.log(arr.reduce(function(x,y){
+            return x*y;
+        }));
+    </script>
+</html>

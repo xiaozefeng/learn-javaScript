@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var xiaoming ={
+            name:'xiaoming',
+            birth:1993,
+            age:function () {
+                var y = new Date().getFullYear();
+                return y-this.birth;
+            }
+        }
+        console.log(xiaoming.age);
+        console.log(xiaoming.age());
+        console.log('----------------------------');
+        
+
+    </script>
+</html>

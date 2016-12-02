@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        //1用一个变量先捕获this
+        var xiaoming ={
+            name:"xiaoming",
+            birth:1993,
+            age:function  () {
+                var that = this;
+                var y = new Date().getFullYear();
+                return y-that.birth;
+            }
+        }
+        console.log(xiaoming);
+        console.log(xiaoming.age());
+    </script>
+</html>
