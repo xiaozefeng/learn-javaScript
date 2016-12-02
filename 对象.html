@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <ul>
+                <li v-for="(val,key,index) of xiaoming">
+                    {{index}} {{key}} -- {{val}}
+                </li>
+            </ul>
+            {{xiaoming}}
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#box',
+            data:{
+                xiaoming:{
+                    name: '小明',
+                    birth: 1990,
+                    school: 'No.1 Middle School',
+                    height: 1.70,
+                    weight: 65,
+                    score: null
+                }
+            },
+            methods:{
+
+            },
+            computed:{
+
+            }
+        })
+    </script>
+</html>

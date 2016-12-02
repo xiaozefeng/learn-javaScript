@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript 数组</title>
+    </head>
+    <body>
+        <div id="box">
+            <input type="text" v-model="t1" @keydown.enter="add" placeholder="点击添加" />
+            <p>
+                <input type="button" name="" id="" value="删除尾部元素" @click="arr.pop()">
+            </p>
+            <p>
+                <input type="button" name="name" value="往头部添加元素" @click="arr.unshift('我是头部元素')">
+            </p>
+            <p>
+                <input type="button" name="name" value="删除头部元素" @click="arr.shift()">
+            </p>
+            <p>
+                <button type="button" name="button" @click="arr.reverse()">反转数组</button>
+            </p>
+            <p>
+                <button type="button" name="button" @click="arr.sort()">排序</button>
+            </p>
+            <p>
+                <button type="button" name="button" @click="copyArr">复制数组</button>
+            </p>
+            <p>
+                <button type="button" name="button" @click="concatArr">连接数组</button>
+            </p>
+            <ul>
+                <li v-for="(item,index) in arr" :key="index" >
+                    <span >
+                        {{item}}
+                    </span>
+                    <span>
+                        <input type="button" value="删除" @click="del(index)">
+                    </span>
+                </li>
+            </ul>
+            <p>
+                数组的长度: {{arr.length}}
+            </p>
+            <p>
+                将数组转换成字符串:{{arr.join('-')}}
+            </p>
+            <p>
+                {{arr}}
+            </p>
+            <p>
+                新的数组:{{newArr}}
+            </p>
+            <p>
+                多维数组: {{multiArr}}
+            </p>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+            window.onload=function(){
+                new  Vue({
+                    el:'#box',
+                    data:{
+                        arr:['apple','orange','balana'],
+                        newArr:[],
+                        multiArr:[[0,1,2],['apple','organe','balana']],
+                        t1:'',
+                        t2:0
+                    },
+                    methods:{
+                        add(){
+                            this.arr.push(this.t1);
+                        },
+                        setArrLength(){
+                            this.arr.legnth=this.t2;
+                        },
+                        del(i){
+                            this.arr.splice(i,1);
+                        },
+                        copyArr(){
+                            this.newArr = this.arr.slice();
+                        },
+                        concatArr(){
+                            this.multiArr =this.multiArr.concat(this.arr);
+                        }
+                    }
+                })
+            }
+
+    </script>
+</html>

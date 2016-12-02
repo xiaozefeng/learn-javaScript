@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.onload=function() {
+            'use strict';
+            var arr = ['apple','orange','banlana'];
+            //循环一
+            for (var i = 0; i < arr.length; i++) {
+                    console.log(arr[i]);
+            }
+            //循环二
+            for(var i in arr){//注意这里获得是索引
+                console.log(arr[i]);
+            }
+            //循环三
+            for (val of arr) {
+                console.log(val);
+            }
+
+        }
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.onload=function() {
+            var map = new Map([['jack',95],['rose',96],['lucy',97]])
+            // new Vue({
+            //     el:'#box',
+            //     data:{
+            //         m:map
+            //     }
+            // })
+            console.log(map);
+            //根据key获取value
+            console.log(map.get('jack'));
+            //set 设置value 如果key相同则会覆盖
+            map.set('tom',100);
+            map.set('jack','零分');
+            console.log(map);
+            map.delete('jack');
+            //删除之后值为undefined
+            console.log(map.get('jack'));
+
+        }
+    </script>
+</html>

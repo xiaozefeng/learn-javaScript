@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+            <h3>
+                forEach 是 ES5.1 引入的标准，需要测试浏览器是否支持!
+            </h3>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        'use strict';
+        var arr = [1,2,3];
+        //遍历数组时
+        arr.forEach(function (element,index,array) {
+            //elelmen 代表 遍历的元素
+            //idnex 代表索引
+            //array 代表数组本身
+            console.log(element);
+        })
+        console.log('--------------------------');
+        var s = new Set([1,2,3,4,5,1]);
+        s.forEach(function(element,sameElement,set){
+            //element 代表遍历的元素
+            //由于set没有索引 所以第二个元素也是set本身
+            //set 表示set本身
+            console.log(element+'--------->'+sameElement);
+        })
+        console.log('--------------------------');
+        var m = new Map([['jack',95],['rose',96],['lucy',97]]);
+        m.forEach(function(key,value,map){
+            console.log(key+'---'+value);
+        })
+    </script>
+</html>

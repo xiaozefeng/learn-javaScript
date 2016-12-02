@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript 字符串</title>
+    </head>
+    <body>
+        <div id="box">
+            <h1>常用字符串操作</h1>
+            <p>
+                <input type="text" v-model="msg">
+            </p>
+            <p>
+                大写： {{msg.toUpperCase()}}
+            </p>
+            <p>
+                小写: {{msg.toLowerCase()}}
+            </p>
+            <p>
+                反转: {{msg.split('').reverse().join('-')}}
+            </p>
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        new Vue({
+            el:'#box',
+            data:{
+                msg:'hello'
+            },
+            computed:{
+                upperMsg:function(){
+                    return this.msg.toUpperCase();
+                },lowerMsg:function(){
+                    return this.msg.toLowerCase();
+                }
+            }
+        })
+    </script>
+</html>

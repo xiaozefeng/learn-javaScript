@@ -1,2 +1,2 @@
 # learn-javaScript
-学习javaScirpt
+学习JavaScirpt
