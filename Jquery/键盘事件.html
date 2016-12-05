@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <input type="text" name="name" value="" id="in1" placeholder="keydown">
+        <input type="text" name="name" value="" id="in2" placeholder="keyup">
+        <input type="text" name="name" value="" id="in3" placeholder="keypress">
+    </body>
+    <script src="jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#in1').keydown(function(event) {
+                /* Act on the event */
+                alert('keydown');
+            });
+            $('#in2').keyup(function(event) {
+                /* Act on the event */
+                alert('keyup');
+            });
+            $('#in3').keypress(function(event) {
+                /* Act on the event */
+                alert('keypress');
+            });
+        });
+    </script>
+</html>

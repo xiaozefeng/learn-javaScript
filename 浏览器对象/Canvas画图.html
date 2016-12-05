@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <canvas id="canvas" width="300" height="300">
+            <p>你的浏览器不支持canvas</p>
+        </canvas>
+    </body>
+    <script type="text/javascript">
+        var canvas = document.getElementById('canvas');
+        if(canvas.getContext){
+            alert('你的浏览器支持canvas');
+        }else {
+            alert('你的浏览器不支持canvas');
+        }
+    </script>
+</html>

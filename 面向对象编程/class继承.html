@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>ES6 引入class关键字</h1>
+    </body>
+    <script type="text/javascript">
+        //定义一个对象
+        class Student {
+            constructor(name) {
+                this.name = name;
+            }
+            hello(){
+                console.log('Hello,'+this.name);
+            }
+        }
+        //继承
+        class PrimaryStudent extends Student {
+            constructor(name,grade) {
+                super(name);
+                this.grade = grade;
+            }
+            myGrade(){
+                console.log('I am at grade '+this.grade);
+            }
+        }
+        
+
+    </script>
+</html>

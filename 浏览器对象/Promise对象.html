@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>
+            
+        </h1>
+    </body>
+    <script type="text/javascript">
+        //异步执行
+        function callback() {
+            console.log('Done');
+        }
+        console.log('before setTimeOut()');
+        setTimeout(callback,1000);
+        console.log('alter setTimeOut()');
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>
+            JavaScript面向对象编程跟java不同，没有类 和实例的区分
+        </h1>
+        <p>
+            JavaScript通过原型(prototype)来实现面向对象编程
+        </p>
+    </body>
+    <script type="text/javascript">
+        var Student ={
+            name:'Robbt',
+            height:1.2,
+            run:function() {
+                console.log(this.name +'is running...');
+            }
+        }
+
+        var xiaoming ={
+            name:'小明'
+        }
+        //将小明的原型指向了 Student 获得了Student的属性和方法，相当于继承
+        xiaoming.__proto__ = Student;
+        xiaoming.run();
+        //将小明的原型指向另外的实例
+        var Bird={
+            fly:function () {
+                console.log(this.name+'is flying...');
+            }
+        }
+        xiaoming.__proto__ = Bird;
+        // xiaoming.run(); 报错
+        xiaoming.fly();
+    </script>
+</html>

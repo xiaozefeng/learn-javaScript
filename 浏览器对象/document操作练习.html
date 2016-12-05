@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <ol id="box">
+            <li class="lang">Scheme</li>
+            <li class="lang">JavaScript</li>
+            <li class="lang">Python</li>
+            <li class="lang">Ruby</li>
+            <li class="lang">Haskell</li>
+        </ol>
+    </body>
+    <script type="text/javascript">
+        // var lists = document.getElementById('box').getElementsByTagName('li');
+        var ol = document.getElementById('box');
+        var lists =ol.children;
+        var arr =[];
+        for (var x of lists) {
+            arr.push(x);
+        }
+        ol.innerHTML ='';
+        arr.sort(function(x,y){
+            var x1 = x.innerHTML.toLowerCase();
+            var y1 = y.innerHTML.toLowerCase();
+            return x1>y1;
+        });
+        // console.log(arr);
+        for (var y of arr) {
+            ol.appendChild(y);
+        }
+    </script>
+</html>

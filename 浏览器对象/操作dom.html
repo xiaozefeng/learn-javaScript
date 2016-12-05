@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="box">
+            <p>我是p1标签</p>
+            <p>我是p2标签</p>
+            <div class="test">我是class1</div>
+            <div class="test">我是class2</div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        //获取id为box的节点
+        var box = document.getElementById('box');
+        console.log(box);
+        //获取box下p标签
+        var ps = document.getElementById('box').getElementsByTagName('p');
+        for (let x of ps) {
+            console.log(x);
+        }
+        //获取box 下面所有class 为test的元素
+        var tests = document.getElementById('box').getElementsByClassName('test');
+        for (let x of tests) {
+            console.log(x);
+        }
+
+        //直接获取box下所有元素
+        console.log(box.children);
+
+        //获取第一个子元素
+        console.log(box.firstElementChild);
+        //获取最后一个子元素
+        console.log(box.lastElementChild);
+
+    </script>
+</html>

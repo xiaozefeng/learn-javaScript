@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+        <p>
+            JavaScript通过原型(prototype)来实现面向对象编程
+        </p>
+        <p>
+            通过Object.create();创建一个对象
+        </p>
+    </body>
+    <script type="text/javascript">
+        //原型对象
+        var Student ={
+            name:'Robbt',
+            height:1.2,
+            run:function() {
+                console.log(this.name +'is running...');
+            }
+        }
+        function createStudent(name) {
+            var obj = Object.create(Student);
+            obj.name=name;
+            return obj;
+        }
+        var xiaoming = createStudent('小明');
+        xiaoming.run();
+        console.log(xiaoming.__proto__ === Student);
+    </script>
+</html>

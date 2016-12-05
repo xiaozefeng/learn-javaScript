@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <p>
+            Jquery 可以监听的事件：
+        </p>
+        <p>
+            <strong>鼠标事件</strong>
+        </p>
+        <p>
+            <input type="button" name="name" value="单击事件" id="btn1">
+        </p>
+        <p style="height:200px;width:200px;">
+            <input type="button" name="name" value="双击事件" id="btn2">
+        </p>
+
+        <p id="p1" style="background-color: blue;height: 100px;">
+            mouseenter 鼠标移入时触发
+        </p>
+        <p id="p2" style="background-color: green;height: 100px;">
+            mouseleave 鼠标离开时触发
+        </p>
+
+        <p id="p3" style="background-color: red;height: 100px;">
+            hover 相当于 mouseenter + mouseleave事件
+        </p>
+
+    </body>
+    <script src="jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            $('#btn1').click(function(event) {
+                console.log(event);
+                alert('单击事件');
+            });
+
+            $('#btn2').dblclick(function(event) {
+                console.log(event);
+                alert('双击事件');
+            });
+
+            $('#p1').mouseenter(function(event) {
+                /* Act on the event */
+                alert('鼠标移入');
+            });
+
+            $('#p2').mouseleave(function(event) {
+                /* Act on the event */
+                alert('鼠标离开');
+            });
+
+            $('#p3').hover(function() {
+                alert('鼠标移入');
+            }, function() {
+                alert('鼠标移出');
+            });
+
+        });
+    </script>
+</html>

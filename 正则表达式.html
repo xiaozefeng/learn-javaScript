@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>javaScript demo</title>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+    <script src="vue.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.onload=function  () {
+            //定义正则表达式
+            var reg1 = /ABC\-010/;
+            var reg2 = new RegExp('ABC\\-010');
+            console.log(reg1);
+            console.log(reg2);
+
+            //split 接受正则表达式
+            console.log('a  b c'.split(/\s+/));
+            console.log('a,b, c  d'.split(/[\s\,]+/));
+            console.log('a,b;c;  d  '.split(/[\s\,\;]+/));
+        }
+    </script>
+</html>
