@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+    </body>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //underscore 是一个第三方库
+        var arr = _.map([1,2,3,4],(x)=> x*x);
+        console.log(arr);
+        //作用于object
+        console.log(_.map({a:1,b:2,c:3},(v,k) => k+'='+v));
+    </script>
+</html>

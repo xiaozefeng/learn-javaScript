@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+    </body>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var xiaoming = {
+            name:'xiaoming',
+            age:18,
+            birth:1993
+        }
+        //获取对象所有key
+        console.log(_.keys(xiaoming));
+        //获取对象的value
+        console.log(_.values(xiaoming));
+
+        //mapObject
+        console.log(_.mapObject(xiaoming,(v,k)=>k+'='+v));
+
+        //invert 交换对象的key 和value
+        console.log(_.invert(xiaoming));
+
+        //extend 把多个对象的属性合并到第一个对象身上
+        _.extend(xiaoming,{hobby:'吃饭',age:19});
+        console.log(xiaoming);
+        // extendOwn 忽略从原型继承的属性
+        _.extendOwn(xiaoming,{hobby:'吃饭',age:19});
+
+        //clone 克隆
+        var copy = _.clone(xiaoming);
+        console.log(copy);
+
+        //isEqual 将两个对象或者数组进行神队比较，内容相等返回true 否者返回false
+        console.log(_.isEqual(xiaoming,copy));
+        console.log(_.isEqual([1,2,3],[1,2,3]));
+
+    </script>
+</html>

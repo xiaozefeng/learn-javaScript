@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <h1>
+        underscore为集合类对象提供了一致的接口。集合类是指Array和Object，暂不支持Map和Set。
+        </h1>
+    </body>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //Array 有map和filter 但是object没有 ，underscore库可以给object使用这些方法
+
+        //返回一个object
+        console.log(_.mapObject({a:1,b:2,c:3}, (v,k) => k+'='+v));
+        //返回一个Array
+        console.log(_.map({a:1,b:2,c:3}, (v,k) => k+'='+v));
+
+
+        //every 当集合中所有元素都满足条件时返回true 否者返回false
+        console.log(_.every([1,2,3,4,-1],(x) => x>0));
+        //some 只用有一个元素满足条件就返回true 否者返回false
+        console.log(_.some([1,2,3,4,5,-1],(x) => x<0));
+
+
+        //max 返回集合中值最大的 min返回集合中最小值
+        console.log(_.max([1,2,34,5]));
+        //空集合时返回 -Infinity 所以要先判断是否为空
+        console.log(_.max([]));
+        //如果是object时，忽略key 只计算value
+        console.log(_.max({a:1,b:2,c:3}));
+
+
+        //groupBy 把集合的元素按照key归类
+        var scores = [20, 81, 75, 40, 91, 59, 77, 66, 72, 88, 99];
+        console.log(_.groupBy(scores,function(x){
+            if(x<60){
+                return 'C';
+            }else if(x<80){
+                return 'B';
+            }else{
+                return 'A';
+            }
+        }));
+
+        //shuffle 随机打乱一个集合
+        console.log(_.shuffle([1,2,3,4,5,6]));
+
+        //sample 随机从一个集合中取一个或者多个元素
+        console.log(_.sample([1,2,3,4,5,6,7,8],1));
+        console.log(_.sample([1,2,3,4,5,6,7,8],3));
+
+    </script>
+</html>

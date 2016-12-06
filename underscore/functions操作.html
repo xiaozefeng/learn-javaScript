@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+    </body>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //绑定函数的对象
+        var lg = _.bind(console.log,console);
+        lg('绑定成功');
+
+        //偏函数 给函数的参数设定默认值，减少函数的使用难度
+        var pow2N = _.partial(Math.pow,2);
+        console.log(pow2N(3)); //相当于3的平方
+
+        //使用下划线 _ 当成占位符，可以给第二参数设置默认值
+        var cube = _.partial(Math.pow,_,3);
+        console.log(cube(3));  //相当于3的立方
+
+        //如果一个函数的开销很大，我们希望把结果缓存下来
+        //定义一个计算阶乘的函数
+        function factorial(n) {
+            console.log('start calculate '+n+'...');
+            var s =1 ,i=n;
+            while(i>1){
+                s=s*i;
+                i--;
+            }
+            console.log(n+'! =' +s);
+            return s;
+        }
+        //注意控制台的输出
+        // factorial(10);
+        // factorial(10);
+
+        //memoize 可以缓存结果
+        var myFactorial = _.memoize(function(n){
+            console.log('start calculate '+n+'...');
+            var s =1 ,i=n;
+            while(i>1){
+                s=s*i;
+                i--;
+            }
+            console.log(n+'! =' +s);
+            return s;
+        })
+        myFactorial(10);
+        myFactorial(10);
+        //但是计算9的时候还是会计算，所以使用递归
+        myFactorial(9);
+
+
+
+    </script>
+</html>

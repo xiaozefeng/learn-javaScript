@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style media="screen">
+            .uk-icon-external-link.before{
+                content: "\f08e";
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <a href="http://www.baidu.com">百度</a>
+            <br>
+            <a href="http://www.baidu.com">google</a>
+            <br>
+            <a href="http://www.baidu.com">360</a>
+            <br>
+            <a href="#">Jquery</a>
+        </div>
+    </body>
+    <script src="jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        $.fn.external=function () {
+            return this.filter('a').each(function(index, el) {
+                var a = $(this);
+                var url =a.attr('href');
+                if(url && (url.indexOf('http://')===0 || url.indexOf('https://') ===0)){
+                    a.attr('href', '#0')
+                    .removeAttr('target')
+                    .append(' <i class="uk-icon-external-link"></i>')
+                    .click(function(event) {
+                        /* Act on the event */
+                        if (confirm('你确认要前往'+url+"?")) {
+                            window.open(url);
+                        }
+                    });
+                }
+            });;
+        }
+        $(function () {
+            $('#box a').external();
+        })
+    </script>
+</html>

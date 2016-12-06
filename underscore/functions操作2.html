@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+    </body>
+    <script src="underscore.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //缓存计算结果
+        var factorial = _.memoize(function(n){
+            console.log('start calculate' +n+'...');
+            if(n<2){
+                return 1;
+            }
+            return n* factorial(n-1);
+        });
+        factorial(10);
+        console.log('-----------------------');
+        console.log(factorial(9));
+
+
+        //once 保证一个方法只能使用一次
+        var onece_fn = _.once(function () {
+            alert('hello underscore');
+        })
+        onece_fn();
+        onece_fn();
+        onece_fn();
+
+
+        //delay 可以让一个函数延迟执行
+        _.delay(alert,2000);
+
+        var log = _.bind(console.log, console);
+        _.delay(log, 2000, 'Hello,', 'world!');
+        // 2秒后打印'Hello, world!':
+    </script>
+</html>
